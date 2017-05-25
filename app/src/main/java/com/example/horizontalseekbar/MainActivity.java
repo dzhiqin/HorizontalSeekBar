@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         horizontalSeekBar=(HorizontalSeekBar)findViewById(R.id.sb_horizontal);
-        horizontalSeekBar.setProgressLeft(50);
+        horizontalSeekBar.setProgressLeft(90);
         horizontalSeekBar.setProgressRight(80);
         horizontalSeekBar.setOnSlideListener(new HorizontalSeekBar.OnSlideListener() {
             @Override
