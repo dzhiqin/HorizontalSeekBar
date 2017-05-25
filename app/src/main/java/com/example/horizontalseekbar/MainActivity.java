@@ -15,13 +15,14 @@ public class MainActivity extends AppCompatActivity {
         horizontalSeekBar.setProgressRight(80);
         horizontalSeekBar.setOnSlideListener(new HorizontalSeekBar.OnSlideListener() {
             @Override
-            public void onSlidingProgress(int progress) {
+            public void onSlidingProgress(int progressLeft,int progressRight) {
 
             }
 
             @Override
-            public void onSlidProgress(int progress) {
-                Log.v("test","progress="+progress);
+            public void onSlidProgress(int progressLeft,int progressRight) {
+                Log.v("test","progressLeft="+progressLeft);
+                Log.v("test","progressRight="+progressRight);
             }
         });
     }

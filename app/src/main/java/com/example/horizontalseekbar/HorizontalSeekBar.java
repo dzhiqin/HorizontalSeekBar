@@ -113,9 +113,9 @@ public class HorizontalSeekBar extends View {
                     if(progressRight>max) progressRight=max;//右边滑动块的行程，左边滑动块到max
                     if(progressRight<progressLeft+marginProgress) progressRight=progressLeft+marginProgress;
                 }
-                deltaProgress=progressRight-progressLeft;//deltaProgress是我们需要的，两个滑动块之间的距离
+                deltaProgress=progressRight-progressLeft;//
                 if(listener!=null){
-                    listener.onSlidingProgress(deltaProgress);
+                    listener.onSlidingProgress(progressLeft,progressRight);
                 }
                 invalidate();
                 break;
@@ -132,7 +132,7 @@ public class HorizontalSeekBar extends View {
                 }
                 deltaProgress=progressRight-progressLeft;
                 if(listener!=null){
-                    listener.onSlidProgress(deltaProgress);
+                    listener.onSlidProgress(progressLeft,progressRight);
                 }
                 invalidate();
                 break;
@@ -154,8 +154,9 @@ public class HorizontalSeekBar extends View {
         this.listener=listener;
     }
     public interface OnSlideListener{
-        void onSlidingProgress(int progress);
-        void onSlidProgress(int progress);
+        //返回左边和右边的progress
+        void onSlidingProgress(int progressLeft,int progressRight);
+        void onSlidProgress(int progressLeft,int progressRight);
     }
 }
 
